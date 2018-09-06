@@ -1,10 +1,10 @@
 package spark.template.mustache;
 
 import spark.template.mustache.MustacheTemplateEngine;
-import spark.Spark;
-import static spark.Spark.get;
 
-public class testEx{
+import static spark.Spark.get;
+import static spark.Spark.port;
+public class test{
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
@@ -13,7 +13,8 @@ public class testEx{
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
     public static void main(String[] args){
-	Spark.port(getHerokuAssignedPort());
-	get("/",(rq,rs)->"test",new MustacheTemplateEngine());
+        port(getHerokuAssignedPort());
+	
+	get("/",(rq,rs)->"<b>test</b>");
     }
 }
