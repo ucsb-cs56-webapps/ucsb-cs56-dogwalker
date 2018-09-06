@@ -1,6 +1,10 @@
 
 mvn package heroku:deploy to push to the heroku site at https://dogwalker.herokuapp.com/
 
+use this so you to push directly to the site git:
+
+heroku git:remote -a dogwalker
+
 spark-template-mustache
 =======================
 
