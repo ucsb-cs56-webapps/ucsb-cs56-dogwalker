@@ -1,3 +1,6 @@
+
+mvn package heroku:deploy to push to the heroku site at https://dogwalker.herokuapp.com/
+
 spark-template-mustache
 =======================
 
