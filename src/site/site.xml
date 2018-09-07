@@ -1,0 +1,9 @@
+<project>
+  <body>
+    <links>
+        <item name="ucsb-cs56-pconrad" href="http://ucsb-cs56-pconrad.github.io"/>
+        <item name="sparkjava-01" href="http://ucsb-cs56-pconrad.github.io/tutorials/sparkjava-01"/>
+        <item name="javadocs" href="/apidocs/index.html"/>
+    </links>
+  </body>
+</project>
