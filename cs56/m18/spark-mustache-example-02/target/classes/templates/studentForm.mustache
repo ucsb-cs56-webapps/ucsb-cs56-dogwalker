@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{{> head }}
+<body>
+ {{> nav }}
+ <h1>Student Form</h1>
+
+<form action="/add/student" method="post">
+  First name:<br>
+  <input type="text" name="firstname" value="Chris">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Gaucho">
+  <br><br>
+  Last name:<br>
+  <input type="text" name="perm" value="1234567">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/add/student".</p>
+
+
+ {{> bootstrap-from-cdn-body }}
+</body>
+</html>
