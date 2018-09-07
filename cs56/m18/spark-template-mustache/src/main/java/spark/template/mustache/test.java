@@ -69,12 +69,12 @@ private static String streamToString(InputStream inputStream) {
         String profiles = "<h1><a href='/profile'>Profile</a></h1>\n";
       
 
-	String homeInfo= jsonParseConverter(jsonGetRequest("https://raw.githubusercontent.com/andrewdoanutz/ucsb-cs56-dogwalker/master/home.json"));
+	String homeInfo=jsonGetRequest("https://raw.githubusercontent.com/andrewdoanutz/ucsb-cs56-dogwalker/master/home.json");
 
 	Map map=new HashMap();
 	map.put("listing",homeInfo);
 	
-	get("/home",(rq,rs)->new ModelAndView(map,"home.mustache")+profiles,new MustacheTemplateEngine());
+	get("/home",(rq,rs)->profiles+map);
 	String userProf = jsonParseConverter(jsonGetRequest("https://raw.githubusercontent.com/andrewdoanutz/ucsb-cs56-dogwalker/master/profile.json"));
 	get("/profile",(rq,rs)->"<h1><a href='/home'>Home</a></h1>\n"+userProf);
     }
