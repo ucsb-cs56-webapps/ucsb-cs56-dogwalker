@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="edu.ucsb.cs56.pconrad.SparkDemo01Test" time="0.003" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="edu.ucsb.cs56.pconrad.SparkDemo01Test" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-7.b13.fc27.x86_64/jre/lib/amd64"/>
@@ -61,5 +61,5 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="edu.ucsb.cs56.pconrad.SparkDemo01Test" name="test_out" time="0.003"/>
+  <testcase classname="edu.ucsb.cs56.pconrad.SparkDemo01Test" name="test_out" time="0.005"/>
 </testsuite>

@@ -105,7 +105,7 @@ private static String streamToString(InputStream inputStream) {
    
 		Map map = new HashMap();
         map.put("name", "Sam");
-
+    
 		        get("/home",(rq,rs)-> new ModelAndView(map,"home.mustache"), new MustacheTemplateEngine());
            get("/profile",(rq,rs)->new ModelAndView(map,"profile.mustache"), new MustacheTemplateEngine());
         // hello.mustache file is in resources/templates directory
