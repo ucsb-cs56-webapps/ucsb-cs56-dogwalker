@@ -1,0 +1,16 @@
+ [
+    {
+      "name": "Mark Lee",
+      "dogType": "Husky",
+      "boyOrGirl": "Girl",
+      "description": "looking for another owner with large dog for play-dates",
+      "availability": "MTWR 5-10PM",
+    },
+    {
+      "name": "Tommy Chong",
+      "dogType": "Shitzu",
+      "boyOrGirl": "Boy",
+      "description": "looking for another owner with little dog for play-dates",
+      "availability": "SU 12-3PM",
+    }
+  ]
