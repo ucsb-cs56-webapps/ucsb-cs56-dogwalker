@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="spark.template.mustache.MustacheTemplateEngineTest" time="0.177" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="spark.template.mustache.MustacheTemplateEngineTest" time="0.143" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> parent of 1e8ac4f... Profile MVP with a hardcoded solution for formatting
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.172-9.b11.fc27.x86_64/jre/lib/amd64"/>
@@ -59,5 +63,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+<<<<<<< HEAD
   <testcase name="test_render" classname="spark.template.mustache.MustacheTemplateEngineTest" time="0.177"/>
+=======
+  <testcase name="test_render" classname="spark.template.mustache.MustacheTemplateEngineTest" time="0.143"/>
+>>>>>>> parent of 1e8ac4f... Profile MVP with a hardcoded solution for formatting
 </testsuite>
