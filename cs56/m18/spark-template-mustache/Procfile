@@ -1,0 +1,1 @@
+web: java -jar target/spark-template-mustache-2.7.1.jar
