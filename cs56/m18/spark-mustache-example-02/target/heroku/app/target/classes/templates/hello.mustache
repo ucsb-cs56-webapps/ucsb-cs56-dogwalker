@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
 {{> head }}
+
+<style>
+     body {
+        background-image: linear-gradient(to right,lightblue,white)
+    }   
+</style>
+
 <body>
  {{> nav }}
- <h1>Hello {{name}}</h1>
+ <!--<h1>Hello {{name}}</h1>-->
 
-<fieldset>
-    <legend>Personal information:</legend>
-    First name:<br>
-    <input type="text" name="firstname"value="Tengyue"><br>
-    Last name:<br>
-    <input type="text" name="lastname" value="Hu"><br><br>
-    <input type="submit" value="Submit">
-</fieldset>
+ <fieldset align="center">
+    <legend><h2>Login In</h2></legend>
+    Username:
+    <input type="text" name="username" value="Tengyue"><br><br>
+    Password:
+    <input type="text" name="password" value="Hu"><br><br>
+    <input type="submit" value="Submit">&nbsp&nbsp&nbsp&nbsp
+
+    <input type="submit" value="Sign Up">
+ </fieldset>
 
  {{> bootstrap-from-cdn-body }}
 </body>
