@@ -13,6 +13,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import static spark.Spark.get;
 import static spark.Spark.port;
+import java.util.HashMap;
+import java.util.Map;
+import spark.ModelAndView;
+
 public class test{
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
@@ -62,9 +66,16 @@ private static String streamToString(InputStream inputStream) {
   }
     public static void main(String[] args){
         port(getHerokuAssignedPort());
-        String profiles = "<h1><a href='/hello'>Profile</a></h1>\n";
-	get("/",(rq,rs)->profiles);
+        String profiles = "<h1><a href='/profile'>Profile</a></h1>\n";
+      
+
+	String homeInfo= jsonParseConverter(jsonGetRequest("https://raw.githubusercontent.com/andrewdoanutz/ucsb-cs56-dogwalker/master/home.json"));
+
+	Map map=new HashMap();
+	map.put("listing",homeInfo);
+	
+	get("/home",(rq,rs)->new ModelAndView(map,"home.mustache")+profiles,new MustacheTemplateEngine());
 	String userProf = jsonParseConverter(jsonGetRequest("https://raw.githubusercontent.com/andrewdoanutz/ucsb-cs56-dogwalker/master/profile.json"));
-	get("/hello",(rq,rs)->userProf);
+	get("/profile",(rq,rs)->"<h1><a href='/home'>Home</a></h1>\n"+userProf);
     }
 }
