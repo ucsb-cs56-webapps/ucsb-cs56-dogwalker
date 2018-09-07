@@ -90,7 +90,7 @@ private static String streamToString(InputStream inputStream) {
         port(getHerokuAssignedPort());
 
 		 String homeInfo=jsonGetRequest("https://raw.githubusercontent.com/andrewdoanutz/ucsb-cs56-dogwalker/master/home.json");
-  String profiles = "<h1><a href='/profile'>Profile</a></h1>\n";
+ 
   
         Map map2=new HashMap();
         map2.put("listing",homeInfo);
@@ -106,12 +106,12 @@ private static String streamToString(InputStream inputStream) {
 		Map map = new HashMap();
         map.put("name", "Sam");
 
-		        get("/home",(rq,rs)->profiles+map2);
-           get("/profile",(rq,rs)->"<h1><a href='/home'>Home</a></h1>\n"+userProf);
+		        get("/home",(rq,rs)-> new ModelAndView(map,"home.mustache"), new MustacheTemplateEngine());
+           get("/profile",(rq,rs)->new ModelAndView(map,"profile.mustache"), new MustacheTemplateEngine());
         // hello.mustache file is in resources/templates directory
-        get("/", (rq, rs) -> new ModelAndView(map, "hello.mustache"), new MustacheTemplateEngine());
+        get("/", (rq, rs) -> new ModelAndView(map, "Login.mustache"), new MustacheTemplateEngine());
 
-		get("/signup", (rq, rs) -> new ModelAndView(map, "studentForm.mustache"), new MustacheTemplateEngine());
+		get("/signup", (rq, rs) -> new ModelAndView(map, "Signup.mustache"), new MustacheTemplateEngine());
     }
 
 		         
