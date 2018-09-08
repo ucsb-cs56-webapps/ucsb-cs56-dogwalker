@@ -2,26 +2,28 @@
 <html>
 {{> head }}
 
-
 <style>
      body {
         background-image: linear-gradient(to right,lightblue,white)
-    }   
+    }
 </style>
-
 
 <body>
  {{> nav }}
- <h1>Welcome to Your Profile</h1>
- {{#profile}}
- <ul>"Profile:"
-    <li>{{name}}</li>
-    <li>{{dogType}}</li>
-    <li>{{boyOrGirl}}</li>
-    <li>{{description}}</li>
-    <li>{{availability}}</li>
- </ul>
- {{/profile}}
+ <!--<h1>Hello {{name}}</h1>-->
+<form action="/view/profile" method="post">
+ <fieldset align="center">
+    <legend><h2>View your Profile</h2></legend>
+    Username:
+    <input type="text" name="username"><br><br>
+    Password:
+    <input type="text" name="password"><br><br>
+    <input type="submit" value="Submit">
+
+ </fieldset>
+</form>
+
  {{> bootstrap-from-cdn-body }}
 </body>
 </html>
+
