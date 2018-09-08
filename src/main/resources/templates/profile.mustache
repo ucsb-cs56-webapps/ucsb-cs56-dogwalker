@@ -3,39 +3,45 @@
 {{> head }}
 
 <style>
-      h1{
+     h1{
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   display:inline-block;
-
   color:#FFFFFF;
   height:10%;
   width:100%;
 } 
      body {
-<<<<<<< HEAD
-        background-image: linear-gradient(to right,lightblue,white)
-    }
-=======
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         background-color:#616161;
         color:#212121
      }
->>>>>>> 01f1e6c9df34bcdd7560173431d63ecb294c8340
+      .inputfield{
+       color:#FFFFFF;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+     }
+     button{
+       background-color:#8BC34A
+     }
 </style>
 
 <body>
-<form action="/view/profile" method="post">
+ {{> nav }}
+ <!--<h1>Hello {{name}}</h1>-->
+
  <fieldset align="center">
-    <legend><h2>View your Profile</h2></legend>
+    <h1>View your Profile</h1>
+    <div class="inputfield">
     Username:
-    <input type="text" name="username"><br><br>
+    
+    <input type="text" name="username" value="Tengyue"><br><br>
     Password:
-    <input type="text" name="password"><br><br>
-    <input type="submit" value="Submit">
-
+    <input type="text" name="password" value="Hu"><br><br>
+    
+    <button type="submit">Submit</button>
+</div>
  </fieldset>
-</form>
 
+ {{> bootstrap-from-cdn-body }}
+ 
 </body>
 </html>
-
