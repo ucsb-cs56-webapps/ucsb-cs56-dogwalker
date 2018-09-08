@@ -4,8 +4,19 @@
 
 
 <style>
+
+h1{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  display:inline-block;
+
+  color:#FFFFFF;
+  height:10%;
+  width:100%;
+} 
      body {
-        background-image: linear-gradient(to right,lightblue,white)
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        background-color:#616161;
+        color:#212121
      }
       table.posts-table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -15,14 +26,15 @@
 table.posts-table td, table.posts-table th {
     border: 1px solid #ddd;
     padding: 8px;
+    border-color:#BDBDBD;
 }
-table.posts-table tr:nth-child(even){background-color: #f2f2f2;}
-table.posts-table tr:hover {background-color: #ddd;}
+table.posts-table tr:nth-child(even){background-color: #FFFFFF;}
+table.posts-table tr:hover {background-color: #CFD8DC;}
 table.posts-table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #8BC34A;
     color: white;
 }
 </style>
@@ -30,8 +42,10 @@ table.posts-table th {
 
 <body>
  {{> nav }}
- <h1>Welcome to Dogwalker</h1>
- 
+<fieldset align="center">
+
+<h1>Welcome to Dogwalker</h1>
+
  <table class="posts-table">
    <thead>
      <tr><th>ID</th><th>Email</th><th>Name</th><th>Dog Type</th><th>Gender</th><th>Description</th><th>Availability</th></tr>
@@ -63,5 +77,6 @@ table.posts-table th {
 });
    </script>
  {{> bootstrap-from-cdn-body }}
+ </fieldset>
 </body>
 </html>
