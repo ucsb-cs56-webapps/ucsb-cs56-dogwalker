@@ -3,32 +3,34 @@
 {{> head }}
 
 <style>
+      h1{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  display:inline-block;
+
+  color:#FFFFFF;
+  height:10%;
+  width:100%;
+} 
      body {
-        background-image: linear-gradient(to right,lightblue,white)
-    }
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        background-color:#616161;
+        color:#212121
+     }
+     .inputfield{
+       color:#FFFFFF;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+     }
+     button{
+       background-color:#8BC34A
 </style>
 
 <body>
  {{> nav }}
 
-<form action="/add/student" method="post">
-  <!--
-  First name:<br>
-  <input type="text" name="firstname" value="Chris">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Gaucho">
-  <br><br>
-  Last name:<br>
-  <input type="text" name="perm" value="1234567">
-  <br><br>
-  <input type="submit" value="Submit">
-  -->
-
 <fieldset align="center">
 
-  <h2>Sign Up</h2><br>
-  <form align="left">
+<h1>Sign Up</h1><br>
+  <div class="inputfield">
   &nbsp&nbspFirst name:
   <input type="text" name="firstname">
   &nbsp&nbsp&nbspLast name:
@@ -48,8 +50,8 @@
   &nbsp&nbspAvailability:
   <input type="text" name="lastname"><br><br>
 
-  <input type="submit" name="submit">
-
+  <button type="submit">Submit</button>
+</div>
 </form>
 
 </fieldset>

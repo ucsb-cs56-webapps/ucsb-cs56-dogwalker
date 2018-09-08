@@ -38,7 +38,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class Model {
 
-	private static Logger log = SparkMustacheDemo02.log;
+	private static Logger log = BlogService.log;
 	
     private int nextId = 1;
 
@@ -56,7 +56,7 @@ public class Model {
 		log.debug("Connected to MongoDB, db="+this.db+" client="+this.client);
 
 		// get a handle to the "posts" collection
-        postCollection = this.db.getCollection("testusers");
+        postCollection = this.db.getCollection("posts");
 		
 	}
     
@@ -77,22 +77,20 @@ public class Model {
     // collection.insert(document); // insert first doc
 
 	public int createPost(Post p) throws Exception {
-	    return createPost(p.getEmail(),p.getName(),p.getDogType(),p.getBoyOrGirl(),p.getDescription(),p.getAvailability());
+		return createPost(p.getTitle(),p.getContent(),p.getCategories());
 	}
 
-    public int createPost(String email, String name, String dogType, String boyOrGirl, String description, String availability) throws Exception {
+    public int createPost(String email, String name, String dogType, String boyOrGirl, String description, String Availability ) throws Exception {
 		
 		int id  = getNextSequence("postId");
 		System.out.println("\n\n\n\n\n******* nextSeq = " + id + "************\n\n\n\n\n");
 		
 		Post post = new Post();
-		post.setId(id);
-		post.setEmail(email);
-		post.setDogType(dogType);
-		post.setBoyOrGirl(boyOrGirl);
-		post.setDescription(description);
-		post.setAvailability(availability);
-		String json = SparkMustacheDemo02.dataToJson(post);
+		post.setEmail(id);
+		post.set(title);
+		post.setContent(content);
+		post.setCategories(categories);
+		String json = BlogService.dataToJson(post);
 		System.out.println("\n\n\n\n\n******* json = " + json + "************\n\n\n\n\\n");
 		postCollection.insertOne(Document.parse(json));
 		
@@ -109,7 +107,7 @@ public class Model {
 			try {
 				String json = cur.toJson();
 				log.debug("\n\n\n\n\ncur.toJson()="+json);
-				Post p = SparkMustacheDemo02.json2Post(json);
+				Post p = BlogService.json2Post(json);
 				int id = cur.getInteger("id");
 				p.setId(id);
 				log.debug("Post p="+p);				
@@ -130,7 +128,7 @@ public class Model {
 			Document cur=postCollection.find(eq("id", Integer.parseInt(id))).first();
 		
 			String json = cur.toJson();
-			result = SparkMustacheDemo02.json2Post(json);
+			result = BlogService.json2Post(json);
 			int id_ = cur.getInteger("id");
 			result.setId(id_);
 		} catch (Exception e ) {
@@ -143,7 +141,7 @@ public class Model {
 		Post post = null;
 		try {
 			String json = d.toJson();
-			post = SparkMustacheDemo02.json2Post(json);			
+			post = BlogService.json2Post(json);			
 			int id_ = d.getInteger("id");
 			post.setId(id_);
 		} catch (Exception e) {
@@ -159,7 +157,7 @@ public class Model {
 		try {
 			newPost.setId(Integer.parseInt(id));
 			Document replacementDocument =
-				Document.parse(SparkMustacheDemo02.dataToJson(newPost));
+				Document.parse(BlogService.dataToJson(newPost));
 			FindOneAndReplaceOptions options =
 				new FindOneAndReplaceOptions().returnDocument(AFTER);
 			Document oldDocument =
