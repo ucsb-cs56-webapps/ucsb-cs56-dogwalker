@@ -1,0 +1,6 @@
+P
+export MONGODB_USER=test
+export MONGODB_PASS=Andrewdoan1
+export MONGODB_HOST=ds020208.mlab.com
+export MONGODB_PORT=20208
+export MONGODB_NAME=dogwalkerinfo

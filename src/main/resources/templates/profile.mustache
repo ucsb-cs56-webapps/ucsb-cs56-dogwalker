@@ -13,7 +13,15 @@
 <body>
  {{> nav }}
  <h1>Welcome to Your Profile</h1>
- {{>table}}
+ {{#profile}}
+ <ul>"Profile:"
+    <li>{{name}}</li>
+    <li>{{dogType}}</li>
+    <li>{{boyOrGirl}}</li>
+    <li>{{description}}</li>
+    <li>{{availability}}</li>
+ </ul>
+ {{/profile}}
  {{> bootstrap-from-cdn-body }}
 </body>
 </html>

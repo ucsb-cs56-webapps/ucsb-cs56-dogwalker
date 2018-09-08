@@ -6,14 +6,62 @@
 <style>
      body {
         background-image: linear-gradient(to right,lightblue,white)
-    }   
+     }
+      table.posts-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+table.posts-table td, table.posts-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+table.posts-table tr:nth-child(even){background-color: #f2f2f2;}
+table.posts-table tr:hover {background-color: #ddd;}
+table.posts-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
 </style>
 
 
 <body>
  {{> nav }}
  <h1>Welcome to Dogwalker</h1>
-{{>table}}
+ 
+ <table class="posts-table">
+   <thead>
+     <tr><th>ID</th><th>Email</th><th>Name</th><th>Dog Type</th><th>Gender</th><th>Description</th><th>Availability</th></tr>
+   </thead>
+   <tbody class="put-posts-here">
+   </tbody>
+ </table>
+ 
+ {{> bootstrap-from-cdn-body }}
+ <script>    
+ $(document).ready(function() {
+    $.ajax({
+	url: "/api/posts"
+ }).then(function(data) {
+    
+ console.log("I got the data: " + JSON.stringify(data));
+ $.each(data,function(i,post) {
+     var row = $("<tr></tr>");
+       row.append($("<td></td>").text(post.id));
+       row.append($("<td></td>").text(post.email));
+       row.append($("<td></td>").text(post.name));
+ row.append($("<td></td>").text(post.dogType));
+ row.append($("<td></td>").text(post.Gender));
+ row.append($("<td></td>").text(post.Description));
+ row.append($("<td></td>").text(post.Availability));
+     $('.put-posts-here').append(row);
+   });
+ });
+});
+   </script>
  {{> bootstrap-from-cdn-body }}
 </body>
 </html>

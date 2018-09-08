@@ -17,7 +17,7 @@
 #maven
 dependency-reduced-pom.xml
 target/
-
+.env
 
 
 # Mobile Tools for Java (J2ME)
