@@ -66,10 +66,10 @@ table.posts-table th {
        row.append($("<td></td>").text(post.id));
        row.append($("<td></td>").text(post.email));
        row.append($("<td></td>").text(post.name));
- row.append($("<td></td>").text(post.dogType));
- row.append($("<td></td>").text(post.Gender));
- row.append($("<td></td>").text(post.Description));
- row.append($("<td></td>").text(post.Availability));
+      row.append($("<td></td>").text(post.dogType));
+      row.append($("<td></td>").text(post.boyOrGirl));
+      row.append($("<td></td>").text(post.description));
+      row.append($("<td></td>").text(post.availability));
      $('.put-posts-here').append(row);
    });
  });

@@ -52,17 +52,19 @@ public class SparkMustacheDemo02 {
 		try {
 			Post p = json2Post(request.body());
 			if (p==null) {
+				log.error("could not create new post, request.body="+request.body());
 				response.status(HTTP_BAD_REQUEST);
 				return "\n";
 			}
-			
+			log.debug("post="+p);
 			int id = model.createPost(p);
 			response.status(200);
 			response.type("application/json");
 			return id+"\n";
 		} catch (Exception e) {
+			log.error("could not create new post, exception="+e);
 			response.status(HTTP_BAD_REQUEST);
-			return "\n";
+			return "\n";//format nicer error message TODO
 		}
 	};
 
@@ -186,18 +188,8 @@ public class SparkMustacheDemo02 {
 	public static Post json2Post(String json) throws JsonParseException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		NewPostPayload creation = mapper.readValue(json, NewPostPayload.class);
-		
-		
-		
-			Post p = new Post();
-			p.setEmail(creation.getEmail());
-			p.setName(creation.getName());
-			p.setDogType(creation.getDogType());
-			p.setBoyOrGirl(creation.getBoyOrGirl());
-			p.setDescription(creation.getDescription());
-			p.setAvailability(creation.getAvailability());
-			return p;
+		Post p = mapper.readValue(json, Post.class);
+		return p;
 		
 	}
 	
@@ -261,5 +253,4 @@ public class SparkMustacheDemo02 {
 		return result;
 	}
 }
-
 
