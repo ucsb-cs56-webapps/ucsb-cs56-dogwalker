@@ -15,13 +15,23 @@
         background-color:#616161;
         color:#212121
      }
-      .inputfield{
-       color:#FFFFFF;
+#texts {
+     color:#FFFFFF
+     }
+      #texts .inputfield{
+       color:#000000;
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
      }
      button{
        background-color:#8BC34A
      }
+
+
+
+
+
+
+
 </style>
 
 <body>
@@ -30,13 +40,14 @@
 
  <fieldset align="center">
     <h1>View your Profile</h1>
-    <div class="inputfield">
+    <div id="texts">
     Username:
-    <input type="text" name="username"><br><br>
+    <input type="text" class="inputfield" name="username"><br><br>
     Password:
-    <input type="text" name="password"><br><br>
+    <input type="text" name="password" class="inputfield"><br><br>
     
     <button type="submit">Submit</button>
+    </div>
 </div>
  </fieldset>
 

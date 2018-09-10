@@ -16,13 +16,20 @@
         background-color:#616161;
         color:#212121
      }
-      .inputfield{
-       color:#FFFFFF;
+     #texts {
+     color:#FFFFFF
+     }
+      #texts .inputfield{
+       color:#000000;
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
      }
      button{
        background-color:#8BC34A
      }
+    
+    
+    
+   
 </style>
 
 <body>
@@ -31,14 +38,19 @@
 
  <fieldset align="center">
     <h1>Login</h1>
-    <div class="inputfield">
-    Username:   
-    <input type="text" name="username"><br><br>
-    Password:
-    <input type="text" name="password"><br><br>
+    <div id="texts">
+      Username:
     
+    <input class="inputfield" type="text" name="username"><br><br>
+    
+    
+      Password:
+      
+    <input class="inputfield"  type="text" name="password"><br><br>
+
     <button type="submit">Submit</button>
-</div>
+    </div>
+    </div>
  </fieldset>
 
  {{> bootstrap-from-cdn-body }}

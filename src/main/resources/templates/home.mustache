@@ -36,6 +36,9 @@ table.posts-table th {
     background-color: #8BC34A;
     color: white;
 }
+.trow{
+background-color:#FFFFFF;
+}
 </style>
 
 
@@ -63,13 +66,13 @@ table.posts-table th {
  console.log("I got the data: " + JSON.stringify(data));
  $.each(data,function(i,post) {
      var row = $("<tr></tr>");
-       row.append($("<td></td>").text(post.id));
-       row.append($("<td></td>").text(post.email));
-       row.append($("<td></td>").text(post.name));
-      row.append($("<td></td>").text(post.dogType));
-      row.append($("<td></td>").text(post.boyOrGirl));
-      row.append($("<td></td>").text(post.description));
-      row.append($("<td></td>").text(post.availability));
+       row.append($('<td class="trow"></td>').text(post.id));
+       row.append($('<td class="trow"></td>').text(post.email));
+       row.append($('<td class="trow"></td>').text(post.name));
+      row.append($('<td class="trow"></td>').text(post.dogType));
+      row.append($('<td class="trow"></td>').text(post.boyOrGirl));
+      row.append($('<td class="trow"></td>').text(post.description));
+      row.append($('<td class="trow"></td>').text(post.availability));
      $('.put-posts-here').append(row);
    });
  });
