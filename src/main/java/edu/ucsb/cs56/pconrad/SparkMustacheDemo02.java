@@ -122,13 +122,13 @@ public class SparkMustacheDemo02 {
 		model = new Model(databaseUri);
 		
 
-		get("/login", (rq, rs) -> new ModelAndView(map, "Login.mustache"), new MustacheTemplateEngine());
+
 		get("/about", (rq, rs) -> new ModelAndView(map, "about.mustache"), new MustacheTemplateEngine());
 
 		get("/", (rq, rs) -> new ModelAndView(map, "home.mustache"), new MustacheTemplateEngine());
 		get("/profile", (rq,rs)->new ModelAndView(map,"profile.mustache"),new MustacheTemplateEngine());
 
-		get("/signup",(rq,rs)->new ModelAndView(map,"Signup.mustache"),new MustacheTemplateEngine());
+		get("/makepost",(rq,rs)->new ModelAndView(map,"Signup.mustache"),new MustacheTemplateEngine());
 		// Only API routes can be set up through the routeEntries table; Template Engines are not supported
 		
 		this.routeEntries.add(new RouteEntry("GET","/api", apiRoute, "description of the API"));
