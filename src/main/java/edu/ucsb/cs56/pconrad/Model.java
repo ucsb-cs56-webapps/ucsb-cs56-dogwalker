@@ -77,10 +77,10 @@ public class Model {
     // collection.insert(document); // insert first doc
 
 	public int createPost(Post p) throws Exception {
-	    return createPost(p.getEmail(),p.getName(),p.getNumber(),p.getDogType(),p.getBoyOrGirl(),p.getDescription(),p.getAvailability());
+	    return createPost(p.getEmail(),p.getName(),p.getPassword(),p.getNumber(),p.getDogType(),p.getBoyOrGirl(),p.getDescription(),p.getAvailability());
 	}
 
-    public int createPost(String email, String name,String number, String dogType, String boyOrGirl, String description, String availability) throws Exception {
+    public int createPost(String email, String name,String password,String number, String dogType, String boyOrGirl, String description, String availability) throws Exception {
 		
 		int id  = getNextSequence("postId");
 		System.out.println("\n\n\n\n\n******* nextSeq = " + id + "************\n\n\n\n\n");
@@ -88,6 +88,7 @@ public class Model {
 		Post post = new Post();
 		post.setId(id);
 		post.setName(name);
+		post.setPassword(password);
 		post.setNumber(number);
 		post.setEmail(email);
 		post.setDogType(dogType);
