@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 @Data
 class Post {
     private int id;
+    private String number;
     private String email;
     private String password;
     private String name;

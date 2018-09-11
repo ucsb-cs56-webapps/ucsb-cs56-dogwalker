@@ -50,7 +50,7 @@ background-color:#FFFFFF;
 
  <table class="posts-table" align="center">
    <thead>
-     <tr><th>ID</th><th>Email</th><th>Name</th><th>Dog Type</th><th>Gender</th><th>Description</th><th>Availability</th></tr>
+     <tr><th>ID</th><th>Email</th><th>Name</th><th>Phone Number</th><th>Dog Type</th><th>Gender</th><th>Description</th><th>Availability</th></tr>
    </thead>
    <tbody class="put-posts-here">
    </tbody>
@@ -68,7 +68,8 @@ background-color:#FFFFFF;
      var row = $("<tr></tr>");
        row.append($('<td class="trow"></td>').text(post.id));
        row.append($('<td class="trow"></td>').text(post.email));
-       row.append($('<td class="trow"></td>').text(post.name));
+ row.append($('<td class="trow"></td>').text(post.name));
+ row.append($('<td class="trow"></td>').text(post.number));
       row.append($('<td class="trow"></td>').text(post.dogType));
       row.append($('<td class="trow"></td>').text(post.boyOrGirl));
       row.append($('<td class="trow"></td>').text(post.description));
