@@ -73,6 +73,7 @@ background-color:#FFFFFF;
     </fieldset>
 
 <script>
+var avail = [""];
 function myFunction() {
   var x = document.getElementById("user").value;
   var y = document.getElementById("passcode").value;
@@ -82,7 +83,8 @@ function myFunction() {
       }).then(function(data) {
         console.log("I got the data: " + JSON.stringify(data));
         $.each(data,function(i,post) {
-          if((post.name == x) && (post.password == y)) {
+          if((post.name == x) && (post.password == y) && (avail.includes(x)==false)) {
+            avail.push(x)
             var row = $("<tr></tr>");
             row.append($('<td class="trow"></td>').text(post.id));
             row.append($('<td class="trow"></td>').text(post.email));
