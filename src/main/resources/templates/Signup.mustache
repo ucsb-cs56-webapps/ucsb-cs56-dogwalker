@@ -23,7 +23,7 @@
        color:#000000;
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
      }
-     button{
+     .submit_add_post{
        background-color:#8BC34A
      }
 
@@ -41,36 +41,36 @@
 
 <fieldset align="center">
 
-  <h1>Sign Up</h1><br>
-  
+  <h1>Make a Post</h1><br>
+<div class="alert-area"></div>  
   <div id="texts">
-  &nbsp&nbspFirst name:
-  <input type="text" class="inputfield" name="firstname">
-  &nbsp&nbsp&nbspLast name:
-  <input type="text" class="inputfield" name="lastname"><br><br>
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspE-mail:
-  <input type="text" class="inputfield" name="firstname">
-  &nbsp&nbsp&nbsp&nbspPassword:
-  <input type="text" class="inputfield" name="lastname"><br>
-  <br>
-  &nbsp&nbsp&nbspDog Type:
-  <input type="text" class="inputfield" name="firstname">
-  Dog Gender:
-  <input type="text" class="inputfield" name="lastname"><br>
-  <br>
-  Description:
-  <input type="text" class="inputfield" name="firstname">
-  &nbsp&nbspAvailability:
-  <input type="text" class="inputfield" name="lastname"><br><br>
+<form name="add-post-single-category" id="add-post-single-category"> 
+ <label for="name">
+   Name:</label>
+  <input type="text" class="inputfield" name="name">
+  <label for="email">E-mail:</label>
+  <input type="text" class="inputfield" name="email"><br><br>
+  <label for="password">Password:</label>
+  <input type="text" class="inputfield" name="password">
+  <label for="dogType">Dog Type:</label>
+  <input type="text" class="inputfield" name="dogType"><br><br>
+  <label for="boyOrGirl">Dog Gender:</label>
+  <input type="text" class="inputfield" name="boyOrGirl"
+  <label for="description">Description:</label>
+  <input type="text" class="inputfield" name="description"><br><br>
+  <label for="availability">Availability:</label>
+  <input type="text" class="inputfield" name="availability">
 
-  <button type="submit">Submit</button>
+  <input type="button" name="submit" class="submit_add_post" id="submit_btn" value="Add Post" />
   
 </div>
 </form>
 
 </fieldset>
-</form> 
+{{> scriptsfromcdn }}
 
+
+ {{> site-specific-javascript-add }}
 
  {{> bootstrap-from-cdn-body }}
 </body>
