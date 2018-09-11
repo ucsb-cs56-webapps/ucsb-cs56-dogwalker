@@ -65,6 +65,7 @@ background-color:#FFFFFF;
       Password:<input class="inputfield"  type="text" id="passcode" value =""><br><br>
       
       <button onclick="myFunction()">Submit</button>
+      <button onclick="deletePosts()">Delete Posts</button>
     </div>
     <div class="sorter">
     <div id="tableDiv" style="display:none;" class="table_list"> 
@@ -81,6 +82,30 @@ background-color:#FFFFFF;
 
 <script>
 var avail = [""];
+function deletePosts(data){
+  var x = document.getElementById("user").value;
+  var y = document.getElementById("passcode").value;
+    $(document).ready(function() {
+    $.ajax({
+      url: "/api/posts"
+      }).then(function(data) {
+        console.log("I got the data: " + JSON.stringify(data));
+        $.each(data,function(i,post) {
+          if((post.name == x) && (post.password == y) && (avail.includes(x)==false)) {
+		console.log("Data to delete: " + JSON.stringify(post));
+               $.ajax({
+                                url: '/api/posts/' + post.id,
+                                type: 'DELETE',
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json"
+                        })
+
+          }
+            });
+            });
+            });
+}
+
 function myFunction() {
   var x = document.getElementById("user").value;
   var y = document.getElementById("passcode").value;
