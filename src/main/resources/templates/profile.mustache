@@ -119,9 +119,9 @@ function myFunction() {
         console.log("I got the data: " + JSON.stringify(data));
         $.each(data,function(i,post) {
           
-          if((post.name == x) && (post.password == y) && (avail.includes(x)==false)) {
+          if((post.name == x) && (post.password == y) && (avail.includes(post.id)==false)) {
             $('.put-posts-here').empty();
-	    avail.push(x)
+	    avail.push(post.id)
             var row = $("<tr></tr>");
             row.append($('<td class="trow"></td>').text(post.id));
             row.append($('<td class="trow"></td>').text(post.email));
