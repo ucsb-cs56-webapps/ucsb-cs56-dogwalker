@@ -91,7 +91,7 @@ function deletePosts(data){
       }).then(function(data) {
         console.log("I got the data: " + JSON.stringify(data));
         $.each(data,function(i,post) {
-          if((post.name == x) && (post.password == y) && (avail.includes(x)==false)) {
+          if((post.name == x) && (post.password == y)) {
 		console.log("Data to delete: " + JSON.stringify(post));
                $.ajax({
                                 url: '/api/posts/' + post.id,
@@ -102,8 +102,10 @@ function deletePosts(data){
 
           }
             });
+      location.reload();
             });
             });
+
 }
 
 function myFunction() {
