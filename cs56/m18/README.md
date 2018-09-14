@@ -15,6 +15,9 @@ Agreements
  Finish basic product
  
  
+ 
+ 
+ 
  M18 Final remarks
  
  .mustache files can contain html, css, and javascript, you just need to put them in the tags
@@ -25,4 +28,6 @@ Agreements
  
  add urselves under us in the about us
  
+ .json file in the home repo is an example of how to structure ur database
  
+ USE MLAB
