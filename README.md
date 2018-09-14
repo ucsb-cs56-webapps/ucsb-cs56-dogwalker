@@ -4,6 +4,9 @@ Dog walker/playdate matcher
 make a .env with ur mlab stuff then do . .env before compiling
 USE JAVA8
 
+Live here :  https://dogwalker.herokuapp.com/
+
+
 Future Ideas
  
  show multiple posts for the same username and password
