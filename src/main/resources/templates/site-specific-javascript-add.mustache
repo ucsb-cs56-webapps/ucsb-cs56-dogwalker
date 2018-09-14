@@ -1,0 +1,41 @@
+<!-- This sets JavaScript mode in emacs -*- mode: Javascript;-*- -->
+<script>
+
+function updatePageForAdd(id) {
+    createInfoAlert("Post " + id + " was added to the database");
+}
+
+function createInfoAlert(text) {
+    var alert = $($.parseHTML('<div class="alert alert-info"><a href="#" class="close" data-dismiss="alert">&times;</a>' +  text + '</div>'));
+    $('div.alert-area').append(alert);
+}
+
+$(document).ready(function(){
+
+
+    $(".submit_add_post").click(function() {
+	result = $( "#add-post-single-category" ).serializeArray();
+
+	console.log("Add Post Button clicked, result="+JSON.stringify(result));
+
+	postObject = {}
+	$.each(result,function(i,item) {
+		postObject[item.name]=item.value;
+	
+	});
+	
+	console.log("postObject=="+JSON.stringify(postObject));
+
+	$.ajax({
+	    url: '/api/posts',
+	    type: 'POST',
+	    data: JSON.stringify(postObject)
+	}).then(updatePageForAdd)
+	
+    });
+
+
+    
+});
+
+</script>

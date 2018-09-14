@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+{{> head }}
+
+<style>
+      h1{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  display:inline-block;
+
+  color:#FFFFFF;
+  height:10%;
+  width:100%;
+} 
+     body {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        background-color:#616161;
+        color:#212121
+     }
+#texts {
+     color:#FFFFFF
+     }
+      #texts .inputfield{
+       color:#000000;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+     }
+     .submit_add_post{
+      background-color:#8BC34A;
+      padding-top:5px
+     }
+      td{
+      padding:8px;
+      text-align:right;
+      }
+      
+</style>
+
+<body>
+ {{> nav }}
+
+<fieldset align="center">
+
+  <h1>Make a Post</h1><br>
+  <div class="alert-area"></div>
+  <div id="texts">
+    <table align="center">
+<tbody>
+<form name="add-post-single-category" id="add-post-single-category"> 
+  <tr>
+    <td>
+  <label for="name">
+   Name:</label>
+  <input type="text" class="inputfield" name="name">
+    </td>
+    <td>
+  <label for="number">Phone Number:</label>
+  <input type="text" class="inputfield" name="number">
+    </td>
+  </tr>
+  <tr>
+    <td>
+  <label for="email">E-mail:</label>
+  <input type="text" class="inputfield" name="email">
+    </td>
+    
+  
+  
+    <td>
+  <label for="password">Password:</label>
+  <input type="text" class="inputfield" name="password">
+    </td>
+  </tr>
+  <tr>
+<td>
+  <label for="dogType">Dog Type:</label>
+  <input type="text" class="inputfield" name="dogType">
+</td>
+
+
+  <td>
+  <label for="boyOrGirl">Dog Gender:</label>
+  <input type="text" class="inputfield" name="boyOrGirl">
+  </td>
+  </tr>
+  <tr>
+  <td>
+ <label for="availability">Availability:</label>
+  <input type="text" class="inputfield" name="availability">
+  </td>
+  
+
+    
+  
+
+    <td>
+  <label for="description">Description: </label>
+  <input type="text"  class="inputfield" name="description">
+  </td>
+  </tr>
+  </tbody>
+
+
+    </table>
+    
+  <input type="button" name="submit" class="submit_add_post" id="submit_btn" value="Add Post" />
+  
+</div>
+</form>
+
+</fieldset>
+{{> scriptsfromcdn }}
+
+
+ {{> site-specific-javascript-add }}
+
+ {{> bootstrap-from-cdn-body }}
+</body>
+</html>

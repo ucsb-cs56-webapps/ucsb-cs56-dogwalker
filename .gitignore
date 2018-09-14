@@ -1,3 +1,9 @@
+
+#emacs
+
+*~
+
+
 # Compiled class file
 *.class
 
@@ -6,6 +12,13 @@
 
 # BlueJ files
 *.ctxt
+
+
+#maven
+dependency-reduced-pom.xml
+target/
+.env
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
